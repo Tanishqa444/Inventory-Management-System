@@ -18,3 +18,25 @@ def delete_product():
             return
 
     print("Product not found!")
+
+
+def search_product():
+    products = load_products()
+
+    if not products:
+        print("Inventory is empty!")
+        return
+
+    search_name = input("Enter product name to search: ")
+
+    for product in products:
+        if search_name.lower() in product["name"].lower():
+            print("\nProduct Found:")
+            print("ID:", product["id"])
+            print("Name:", product["name"])
+            print("Price:", product["price"])
+            print("Quantity:", product["quantity"])
+            print("Category:", product["category"])
+            return
+
+    print("Product not found!")
