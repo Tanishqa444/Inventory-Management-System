@@ -65,3 +65,19 @@ def low_stock_alert():
     if not found:
         print("No low stock products!")
 
+def calculate_total_value():
+    products = load_products()
+
+    if not products:
+        print("Inventory is empty!")
+        return
+
+    total_value = 0
+
+    for product in products:
+        total_value += product["price"] * product["quantity"]
+
+    print("\n--- TOTAL INVENTORY VALUE ---")
+    print(f"Total Inventory Value: ₹{total_value:.2f}")
+
+
