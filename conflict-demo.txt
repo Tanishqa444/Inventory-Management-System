@@ -1,2 +1,3 @@
  inventory project description updated by member 1
 Inventory project description updated by Member 2
+Merge conflict successfully demonstrated and resolved through collaboration.
