@@ -155,7 +155,3 @@ def view_products():
         )
 
     print("-" * 75)
-
-
-if __name__ == "__main__":
-        view_products()
