@@ -93,5 +93,43 @@ def update_product():
     except ValueError:
         print("Please enter valid numeric values.")
         
+
+
+def sort_products():
+    products = load_products()
+
+    if not products:
+        print("No products available to sort!")
+        return
+
+    print("\n--- SORT PRODUCTS ---")
+    print("1. Price: Low to High")
+    print("2. Price: High to Low")
+    print("3. Quantity: Low to High")
+    print("4. Quantity: High to Low")
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == "1":
+        products.sort(key=lambda p: p["price"])
+    elif choice == "2":
+        products.sort(key=lambda p: p["price"], reverse=True)
+    elif choice == "3":
+        products.sort(key=lambda p: p["quantity"])
+    elif choice == "4":
+        products.sort(key=lambda p: p["quantity"], reverse=True)
+    else:
+        print("Invalid choice!")
+        return
+
+    print("\nSorted Products:")
+    for product in products:
+        print(
+            f"ID: {product['id']} | "
+            f"Name: {product['name']} | "
+            f"Price: {product['price']} | "
+            f"Quantity: {product['quantity']}"
+        )
+
 if __name__ == "__main__":
-        update_product()
+        sort_products()
