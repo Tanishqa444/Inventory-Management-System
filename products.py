@@ -131,5 +131,31 @@ def sort_products():
             f"Quantity: {product['quantity']}"
         )
 
+
+def view_products():
+    products = load_products()
+
+    print("\n--- ALL PRODUCTS ---")
+
+    if not products:
+        print("No products available in inventory!")
+        return
+
+    print("-" * 75)
+    print(f"{'ID':<10}{'NAME':<20}{'PRICE':<15}{'QUANTITY':<12}{'CATEGORY'}")
+    print("-" * 75)
+
+    for product in products:
+        print(
+            f"{product['id']:<10}"
+            f"{product['name']:<20}"
+            f"{product['price']:<15.2f}"
+            f"{product['quantity']:<12}"
+            f"{product['category']}"
+        )
+
+    print("-" * 75)
+
+
 if __name__ == "__main__":
-        sort_products()
+        view_products()
